@@ -1,12 +1,16 @@
-<h2>Hotels in {{ city }}</h2>
-<p>Check-in: {{ checkIn }}</p>
-<p>Check-out: {{ checkOut }}</p>
-<p>Guests: {{ guests }}</p>
+<div *ngIf="hotels.length > 0; else noResults">
+  <h2>Hotels in {{ city }}</h2>
+  <p>Check-in: {{ checkIn }}</p>
+  <p>Check-out: {{ checkOut }}</p>
+  <p>Guests: {{ guests }}</p>
 
-<div class="hotel-card" *ngFor="let hotel of hotels">
-  <h3>{{ hotel.name }}</h3>
-  <p>Price: {{ hotel.price }}</p>
-  <p>Rating: {{ hotel.rating }} ⭐</p>
+  <div class="hotel-card" *ngFor="let hotel of hotels">
+    <h3>{{ hotel.name }}</h3>
+    <p>Price: {{ hotel.price }}</p>
+    <p>Rating: {{ hotel.rating }} ⭐</p>
+  </div>
 </div>
 
-
+<ng-template #noResults>
+  <p>No hotels found for {{ city }}.</p>
+</ng-template>

@@ -1,8 +1,7 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
+import { HotelService, Hotel } from '../hotel.service';
 
 @Component({
   selector: 'app-hotel-list',
@@ -16,22 +15,23 @@ export class HotelListComponent implements OnInit {
   checkIn: string = '';
   checkOut: string = '';
   guests: string = '';
+  hotels: Hotel[] = [];
 
-  hotels = [
-    { name: 'Grand Palace', price: '₹5000/night', rating: 4.5 },
-    { name: 'City Inn', price: '₹3000/night', rating: 4.0 },
-    { name: 'Luxury Stay', price: '₹7000/night', rating: 5.0 }
-  ];
+  constructor(private route: ActivatedRoute, private hotelService: HotelService) {}
 
-  constructor(private route: ActivatedRoute) {}
+ ngOnInit(): void {
+  this.route.queryParams.subscribe(params => {
+    this.city = params['city'] || '';
+    this.checkIn = params['checkIn'] || '';
+    this.checkOut = params['checkOut'] || '';
+    this.guests = `${params['adults']} Adults, ${params['children']} Children, ${params['rooms']} Rooms`;
 
-  ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.city = params['city'];
-      this.checkIn = params['checkIn'];
-      this.checkOut = params['checkOut'];
-      this.guests = params['guests'];
-    });
-  }
+    if (!this.city.trim()) {
+      this.hotels = []; // No city specified means no hotels to show
+    } else {
+      this.hotels = this.hotelService.getHotelsByCity(this.city);
+    }
+  });
 }
 
+}
