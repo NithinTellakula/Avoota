@@ -1,0 +1,59 @@
+/*.home-container {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(to bottom, #f5f7fa, #e4ebf7);
+  min-height: 100vh;
+}
+
+.home-container h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #003580;
+}
+  */
+
+  /* src/app/home/home.css */
+.home-hero {
+  position: relative;
+  min-height: 340px;
+  background: url('/images/luxury-hotel.jpg') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1;
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+}
+
+.home-hero__content h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    min-height: 180px;
+  }
+  .home-hero__content h1 {
+    font-size: 1.2rem;
+  }
+}
+

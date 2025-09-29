@@ -1,0 +1,47 @@
+<div class="search-bar">
+  <input type="text" 
+         placeholder="Search city" 
+         [(ngModel)]="city" 
+         list="cities">
+
+  <datalist id="cities">
+    <option *ngFor="let c of cityList" [value]="c"></option>
+  </datalist>
+
+
+<input type="date" [(ngModel)]="checkIn" [min]="today" placeholder="Check-in"/>
+
+<input type="date" [(ngModel)]="checkOut" [min]="checkIn || today" placeholder="Check-out"/>
+
+
+  <div class="guest-selector">
+    <input
+      type="text"
+      readonly
+      (click)="toggleGuestPopup()"
+      [value]="guests.adults + ' Adults, ' + guests.children + ' Children, ' + guests.rooms + ' Rooms'"
+    />
+
+    <div class="guest-popup" *ngIf="showGuestPopup">
+      <div class="guest-row">
+        <label>Adults:</label>
+        <button (click)="guests.adults = Math.max(0, guests.adults - 1)">-</button>
+        <span>{{ guests.adults }}</span><button (click)="guests.adults = guests.adults + 1">+</button>
+      </div>
+
+      <div class="guest-row">
+        <label>Children:</label>
+        <button (click)="guests.children = Math.max(0, guests.children - 1)">-</button>
+        <span>{{ guests.children }}</span><button (click)="guests.children = guests.children + 1">+</button>
+      </div>
+
+      <div class="guest-row">
+        <label>Rooms:</label>
+        <button (click)="guests.rooms = Math.max(0, guests.rooms - 1)">-</button>
+        <span>{{ guests.rooms }}</span><button (click)="guests.rooms = guests.rooms + 1">+</button>
+      </div>
+    </div>
+  </div>
+
+  <button (click)="search()">Search</button>
+</div>
