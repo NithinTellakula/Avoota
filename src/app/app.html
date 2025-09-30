@@ -1,8 +1,13 @@
 <header class="app-header">
   <div class="logo">avoota</div>
   <div class="auth-link">
-    <a href="/login">Sign Up or Login</a>
+    <a (click)="openAuthModal()">Sign Up or Login</a>
   </div>
 </header>
+
+<app-authentication-modal
+  [visible]="showAuthModal()"
+  (close)="closeAuthModal()">
+</app-authentication-modal>
 
 <router-outlet></router-outlet>

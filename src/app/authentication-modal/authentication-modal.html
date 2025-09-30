@@ -1,0 +1,41 @@
+<div class="modal-backdrop" *ngIf="visible">
+  <div class="modal-content">
+    <span class="close-btn" (click)="closeModal()">×</span>
+    <h2>{{ isLoginMode ? 'Login' : 'Sign Up' }}</h2>
+
+    <div class="toggle-buttons">
+      <button type="button" [class.active]="isLoginMode" (click)="isLoginMode = true">Login</button>
+      <button type="button" [class.active]="!isLoginMode" (click)="isLoginMode = false">Sign Up</button>
+    </div>
+
+    <form *ngIf="isLoginMode" (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required />
+
+      <label>Password:</label>
+      <input type="password" [(ngModel)]="password" name="password" required />
+
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <button type="submit" class="submit-btn">Login</button>
+    </form>
+
+    <form *ngIf="!isLoginMode" (ngSubmit)="onSignUpSubmit()" #signUpForm="ngForm">
+      <label>Username:</label>
+      <input type="text" [(ngModel)]="username" name="username" required />
+
+      <label>Email:</label>
+      <input type="email" [(ngModel)]="email" name="email" required />
+
+      <label>Password:</label>
+      <input type="password" [(ngModel)]="password" name="password" required />
+
+      <label>Confirm Password:</label>
+      <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required />
+
+      <div class="error-message" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+      <button type="submit" class="submit-btn">Sign Up</button>
+    </form>
+  </div>
+</div>

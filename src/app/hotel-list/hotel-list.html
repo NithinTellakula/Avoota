@@ -1,13 +1,18 @@
 <div *ngIf="hotels.length > 0; else noResults">
-  <h2>Hotels in {{ city }}</h2>
-  <p>Check-in: {{ checkIn }}</p>
-  <p>Check-out: {{ checkOut }}</p>
-  <p>Guests: {{ guests }}</p>
+  <h2 style="text-align:center; margin:20px 0;">Hotels in {{ city }}</h2>
+  <p style="text-align:center; color:#555;">
+    Check-in: {{ checkIn }} | Check-out: {{ checkOut }} | Guests: {{ guests }}
+  </p>
 
-  <div class="hotel-card" *ngFor="let hotel of hotels">
-    <h3>{{ hotel.name }}</h3>
-    <p>Price: {{ hotel.price }}</p>
-    <p>Rating: {{ hotel.rating }} ⭐</p>
+  <div class="hotel-list">
+    <div class="hotel-card" *ngFor="let hotel of hotels">
+      <img [src]="hotel.imageUrl" alt="{{hotel.name}}" />
+      <div class="hotel-card-content">
+        <h3>{{ hotel.name }}</h3>
+        <p class="price">₹ {{ hotel.price }}</p>
+        <p class="rating">{{ hotel.rating }} ⭐</p>
+      </div>
+    </div>
   </div>
 </div>
 
