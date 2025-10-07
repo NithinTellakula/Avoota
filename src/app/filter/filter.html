@@ -1,0 +1,78 @@
+<div class="filter-sidebar">
+  <h3>Filters</h3>
+
+  <!-- Search by Hotel -->
+  <div class="filter-group">
+    <label for="hotelName">Search by Hotel</label>
+    <input id="hotelName" type="text"
+      [(ngModel)]="filters.hotelName"
+      (input)="onFiltersChanged()"
+      placeholder="Enter hotel or place" />
+  </div>
+
+  <!-- Price per night -->
+  <div class="filter-group">
+    <label>Price per night</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" [(ngModel)]="filters.price0_3000" (change)="onFiltersChanged()" />₹0 - ₹3,000</label>
+      <label><input type="checkbox" [(ngModel)]="filters.price3000_5000" (change)="onFiltersChanged()" />₹3,000 - ₹5,000</label>
+      <label><input type="checkbox" [(ngModel)]="filters.price5000_8000" (change)="onFiltersChanged()" />₹5,000 - ₹8,000</label>
+      <label><input type="checkbox" [(ngModel)]="filters.price8000_15000" (change)="onFiltersChanged()" />₹8,000 - ₹15,000</label>
+      <label><input type="checkbox" [(ngModel)]="filters.price15000plus" (change)="onFiltersChanged()" />₹15,000+</label>
+    </div>
+  </div>
+
+  <!-- Sort by -->
+  <div class="filter-group">
+    <label>Sort by</label>
+    <div class="radio-group">
+      <label><input type="radio" name="sortBy" value="lowToHigh" [(ngModel)]="filters.sortBy" (change)="onFiltersChanged()" />Price: Low to High</label>
+      <label><input type="radio" name="sortBy" value="highToLow" [(ngModel)]="filters.sortBy" (change)="onFiltersChanged()" />Price: High to Low</label>
+      <label><input type="radio" name="sortBy" value="userRating" [(ngModel)]="filters.sortBy" (change)="onFiltersChanged()" />User Rating</label>
+      <label><input type="radio" name="sortBy" value="lowestBest" [(ngModel)]="filters.sortBy" (change)="onFiltersChanged()" />Lowest Price & Best Rated</label>
+    </div>
+  </div>
+
+  <!-- Ratings -->
+  <div class="filter-group">
+    <label>Ratings</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" [(ngModel)]="filters.star5" (change)="onFiltersChanged()" />⭐ 5 Star</label>
+      <label><input type="checkbox" [(ngModel)]="filters.star4" (change)="onFiltersChanged()" />⭐ 4 Star</label>
+      <label><input type="checkbox" [(ngModel)]="filters.star3" (change)="onFiltersChanged()" />⭐ 3 Star</label>
+      <label><input type="checkbox" [(ngModel)]="filters.specialCategory" (change)="onFiltersChanged()" />⭐ Special Category</label>
+    </div>
+  </div>
+
+  <!-- Property Types -->
+  <div class="filter-group">
+    <label>Property Types</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" [(ngModel)]="filters.hotel" (change)="onFiltersChanged()" />Hotel</label>
+      <label><input type="checkbox" [(ngModel)]="filters.inn" (change)="onFiltersChanged()" />Inn</label>
+      <label><input type="checkbox" [(ngModel)]="filters.apartment" (change)="onFiltersChanged()" />Apartment</label>
+      <label><input type="checkbox" [(ngModel)]="filters.villa" (change)="onFiltersChanged()" />Villa</label>
+      <label><input type="checkbox" [(ngModel)]="filters.guesthouse" (change)="onFiltersChanged()" />Guesthouse</label>
+      <label><input type="checkbox" [(ngModel)]="filters.resort" (change)="onFiltersChanged()" />Resort</label>
+      <label><input type="checkbox" [(ngModel)]="filters.palace" (change)="onFiltersChanged()" />Palace</label>
+      <label><input type="checkbox" [(ngModel)]="filters.residence" (change)="onFiltersChanged()" />Residence</label>
+    </div>
+  </div>
+
+  <!-- Amenities -->
+  <div class="filter-group">
+    <label>Amenities</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" [(ngModel)]="filters.spa" (change)="onFiltersChanged()" />Spa</label>
+      <label><input type="checkbox" [(ngModel)]="filters.swimmingPool" (change)="onFiltersChanged()" />Swimming Pool</label>
+      <label><input type="checkbox" [(ngModel)]="filters.gym" (change)="onFiltersChanged()" />Gym</label>
+      <label><input type="checkbox" [(ngModel)]="filters.roomService" (change)="onFiltersChanged()" />Room Service</label>
+      <label><input type="checkbox" [(ngModel)]="filters.restaurant" (change)="onFiltersChanged()" />Restaurant</label>
+      <label><input type="checkbox" [(ngModel)]="filters.cafe" (change)="onFiltersChanged()" />Cafe</label>
+      <label><input type="checkbox" [(ngModel)]="filters.currencyExchange" (change)="onFiltersChanged()" />Currency Exchange</label>
+      <label><input type="checkbox" [(ngModel)]="filters.cctv" (change)="onFiltersChanged()" />CCTV</label>
+      <label><input type="checkbox" [(ngModel)]="filters.security" (change)="onFiltersChanged()" />24 Hours Security</label>
+      <label><input type="checkbox" [(ngModel)]="filters.valetParking" (change)="onFiltersChanged()" />Valet Parking</label>
+    </div>
+  </div>
+</div>

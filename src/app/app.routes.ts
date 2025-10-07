@@ -6,7 +6,7 @@ import { HotelListComponent } from './hotel-list/hotel-list';
 
 export const routes: Routes = [
   { path: '', component: Home }, 
-  { path: 'hotels', component: HotelListComponent } 
+  { path: 'hotels', component: HotelListComponent, } 
 ];
 
 @NgModule({

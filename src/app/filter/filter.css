@@ -1,0 +1,49 @@
+.filter-sidebar {
+  width: 270px;
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 24px 18px;
+  min-height: 100vh;
+  box-shadow: 2px 0 8px rgba(80, 80, 80, 0.04);
+}
+
+.filter-sidebar h3 {
+  font-size: 1.3rem;
+  margin-bottom: 24px;
+  color: #313a58;
+}
+
+.filter-group {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  font-weight: 500;
+  margin-bottom: 7px;
+  color: #38404e;
+}
+
+.filter-group input[type='text'] {
+  padding: 7px 10px;
+  width: 100%;
+  border: 1px solid #ccd1d9;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.checkbox-group label, .radio-group label {
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  padding-left: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.checkbox-group input[type="checkbox"], .radio-group input[type="radio"] {
+  margin-right: 8px;
+}

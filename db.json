@@ -1,0 +1,46 @@
+{
+  "hotels": [
+    {
+      "id": "1",
+      "name": "Taj Krishna, Hyderabad",
+      "rating": 4,
+      "price": "₹10000/night",
+      "city": "Hyderabad"
+    },
+    {
+      "id": "2",
+      "name": "Trident, Hyderabad",
+      "price": "₹8500/night",
+      "rating": 4.3,
+      "city": "Hyderabad"
+    },
+    {
+      "id": "3",
+      "name": "The Leela Palace Bengaluru",
+      "price": "₹12000/night",
+      "rating": 4.7,
+      "city": "Bengaluru"
+    },
+    {
+      "id": "4",
+      "name": "JW Marriott Mumbai Juhu",
+      "price": "₹14000/night",
+      "rating": 4.7,
+      "city": "Mumbai"
+    },
+    {
+      "id": "5",
+      "name": "Welcomhotel By ITC Hotels, Dwarka",
+      "price": "₹8500/night",
+      "rating": 4.3,
+      "city": "Delhi"
+    },
+    {
+      "id": "6",
+      "name": "Taj Krishna, Hyderabad (Updated)",
+      "price": "₹9500/night",
+      "rating": 4.8,
+      "city": "Hyderabad"
+    }
+  ]
+}

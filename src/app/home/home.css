@@ -1,19 +1,4 @@
-/*.home-container {
-  text-align: center;
-  padding: 40px 20px;
-  background: linear-gradient(to bottom, #f5f7fa, #e4ebf7);
-  min-height: 100vh;
-}
 
-.home-container h1 {
-  margin-bottom: 30px;
-  font-size: 32px;
-  font-weight: bold;
-  color: #003580;
-}
-  */
-
-  /* src/app/home/home.css */
 .home-hero {
   position: relative;
   min-height: 340px;

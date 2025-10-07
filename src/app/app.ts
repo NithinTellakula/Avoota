@@ -1,26 +1,24 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AuthenticationModalComponent } from './authentication-modal/authentication-modal'; // import your modal component
+import { FormsModule } from '@angular/forms';  // <--- Import FormsModule
+import { AuthenticationModalComponent } from './authentication-modal/authentication-modal';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AuthenticationModalComponent],
+  imports: [RouterOutlet, AuthenticationModalComponent, FormsModule],  // <--- Add FormsModule here
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('hotel');
 
-  // Modal visibility - as signal for optimal Angular usage
   showAuthModal = signal(false);
 
-  // Open modal handler
   openAuthModal() {
     this.showAuthModal.set(true);
   }
 
-  // Close modal handler
   closeAuthModal() {
     this.showAuthModal.set(false);
   }
